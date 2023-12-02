@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="icon" href="path_to_your_icon/favicon.ico" type="image/x-icon">
+        <!-- Option 1: Bootstrap Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+
+    <title>FORUM PEMBELIAN TEH</title>
+
+   
+</head>
+
+<body>
+
+    <div class="kepala d-flex justify-content-center align-items-center text-center" style="background-color: #ff69b4; height: 20vh;">
+        <div class="text-white">
+            <h1 class="fw-bold mb-3"  id="diskah">Teh Diska</h1>
+            <p  id="diskap">teh estetik dengan cita rasa penuh cinta ❤</p>
+        </div>
+    </div>
+    
+    <div class="container marketing">
+
+    <div id="isip"></div>
+        <!-- Three columns of text below the carousel -->
+        <div class="row m-8" id="isiteh">
+            <div class="col-lg-4">
+                <!-- Konten pertama -->
+                <div class="bundar">
+                    <img src="{{ url_for('static', filename='original.jpg') }}">
+                </div>
+                <h2>Original Tea</h2>
+                <h3>Rp.3.000,-</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+            </div>
+            <div class="col-lg-4">
+                <!-- Konten kedua -->
+                <div class="bundar">
+                    <img src="{{ url_for('static', filename='strawberry.jpg') }}">
+                </div>
+                <h2>Strawberry Tea</h2>
+                <h3>Rp.4.000,-</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+            </div>
+        </div>
+        <!--pesanan-->
+        
+        <form class="mx-auto col-lg-8 col-10" style=" margin-top:100px; margin-bottom:100px;">
+            <div class="text-center" style="margin:40px;">
+                
+                <h1 class='m-5'>Silahkan pesan disini:</h1>
+                <p class="text-danger" id="mobilepembayaran">(pembayaran cash ditempat)</p>
+                <div id="tabel-pesanan"></div>
+                <button type="button" onclick="muat()" class="btn text-white" style="background-color: #ff69b4;">muat ulang pesanan</button>
+            </div>
+            <div id="tabel-pesanan"></div>
+            <div class="kanankiri" style="margin:30px 0;">
+                <div class="mb-3" id="isikanankiri">
+                    <div class="bundar-2">
+                        <img src="{{ url_for('static', filename='original.jpg') }}">
+                    </div>
+                    <h2>Original Tea</h2>
+                    <h3>Rp.3.000,-</h3>
+                    <label for="original" class="form-label">maximal pesanan 30 (0 - 30)</label>
+                    <input type="number" class="form-control" id="original" min="0" max="30" value="0">
+                </div>
+                <div class="mb-3" id="isikanankiri">
+                    <div class="bundar-2">
+                        <img src="{{ url_for('static', filename='strawberry.jpg') }}">
+                    </div>
+                    <h2>Strawberry Tea</h2>
+                    <h3>Rp.4.000,-</h3>
+                    <label for="strawberry" class="form-label">maximal pesanan 30 (0 - 30)</label>
+                    <input type="number" class="form-control" id="strawberry" min="0" max="30" value="0">
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="nama" class="form-label">Masukkan Nama(wajib)</label>
+                <input type="text" class="form-control" id="nama" pattern="[A-Za-z\s]{1,}" required>
+            </div>
+            <div class="mb-3">
+                <label for="nohp" class="form-label">Nomor Hp(tidak wajib)</label>
+                <input type="tel" class="form-control" id="nohp" pattern="[0-9]{10,}">
+            </div>
+            <div class="mb-3">
+                <label for="request" class="form-label">Request(tidak wajib)</label>
+                <textarea class="form-control" id="request" rows="3"></textarea>
+            </div>
+            <button type="submit" onclick="pesan()" class="btn btn-lg text-white" style="background-color: #ff69b4;">Pesan</button>
+
+        </form>
+
+        
+    </div><!-- /.container -->
+    <footer class="text-center py-3 vh-20">
+        <p>&copy; 2023 - Teh Diska &bull; Created by Diska Romandoni</p>
+    </footer>
+    
+    
+    <!-- Optional JavaScript; choose one of the two! -->
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                type: 'GET',
+                url: '/tampilp',
+                data: {},
+                success: function (response) {
+                    var isi = response['semuap'];
+                    for (let i = 0; i < isi.length; i++) {
+                        let num = isi[i]['nomor'];
+                        let pesan = isi[i]['pesan'];
+                        let original = isi[i]['original'];
+                        let strawberry = isi[i]['strawberry'];
+                        let temp = `<div class="status">
+            <form>
+                <div class="form-floating m-2">
+                    <h3 >pesan dari penjual:</h3>
+                    <div class="isipesan bg-danger p-2">
+                        <h4 class="text-white" id='pesanp' >${pesan}</h4>
+                    </div>
+                </div>
+                <div class="kanankiri mt-4 ">
+                    <div class="kiri2 mt-2 mb-2 bungkuspilih  ${original === 'habis' ? 'bg-danger text-white' : ''}">
+                        <div class="bungkus">
+                            <img src="{{ url_for('static',filename='original.jpg') }}">
+                        </div>
+                        <h3>original</h3>
+                        <h2><b>${original}</b></h2>
+
+                    </div>
+                    <div class="kanan2 mt-2 mb-2 bungkuspilih  ${strawberry === 'habis' ? 'bg-danger text-white' : ''}">
+                        <div class="bungkus">
+                            <img src="{{ url_for('static',filename='strawberry.jpg') }}">
+                        </div>
+
+                        <h3>strawberry</h3>
+                        <h2><b>${strawberry}</b></h2>
+                    </div>
+                </div>
+
+            </form>
+        </div>`;
+                        $("#isip").append(temp);
+                    }
+                }
+            })
+        });
+        function pesan() {
+            event.preventDefault();
+            var original = $("#original").val();
+            var strawberry = $("#strawberry").val();
+            var nama = $("#nama").val();
+            var nohp = $("#nohp").val();
+            var request = $("#request").val();
+            $.ajax({
+                type: 'POST',
+                url: '/pesan',
+                data: {
+                    k_original: original,
+                    k_strawberry: strawberry,k_nama: nama,k_nohp: nohp,
+                    k_request: request
+                },
+                success: function (response) {
+                    var tableRow = `
+                    <div class="container">
+                    <table class="table table-striped">
+                        <tr><td>Nama:</td><td>${response.nama}</td></tr>
+                        <tr><td>No HP:</td><td>${response.nohp}</td></tr>
+                        <tr><td>Request:</td><td>${response.request_p}</td></tr>
+                        <tr><td>Jumlah Teh Original:</td><td>${response.teh_original}</td></tr>
+                        <tr>
+                            <td>Jumlah Teh Strawberry:</td>
+                            <td>${response.teh_strawberry}</td>
+                        </tr>
+                        <tr>
+                            <td>Total Harga:</td>
+                            <td>Rp. ${response.total_bayar}</td>
+                        </tr>
+                    </table>
+                </div>`;
+
+
+
+                    $("#tabel-pesanan").append(tableRow);
+
+                }
+
+            })
+        }
+        function muat() {
+            window.location.reload();
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,184 @@
+*{
+    font-family: 'Comic Sans MS', cursive;
+}
+
+.kanankiri {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: max-content;
+    
+}
+
+.kiri,
+.kanan {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.kiri img,
+.kanan img {
+    width: 70%;
+    height: 70%;
+    border-radius: 50%;
+}
+.kiri2, .kanan2{
+    padding:0 30px;
+    width: max-content;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    outline:1px solid red;
+}
+
+.bungkus{
+    width:100px;
+    height:100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.bungkus img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+#muatan {
+    height: max-content;
+    width: max-content;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+#pojok {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+
+}
+.status{
+    width:80%;
+    height:max-content;
+    display: flex;
+    margin:50px auto;
+    background-color: rgb(255, 255, 255);
+    box-shadow: inset 0 0 40px pink;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding:50px; 
+}
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
+}
+
+.bundar {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bundar-2 {
+    width: 150px;
+    height: 150px;
+}
+
+.bundar img,
+.bundar-2 img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+#isiteh,
+.kanankiri {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+#isikanankiri {
+    width: max-content;
+    height: max-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#diskah{
+    font-family: 'Dancing Script', cursive; font-size: 4rem;
+}
+#diskap{
+    font-family: 'Comic Sans MS', cursive; font-size: 2rem;
+}
+#mobilepembayaran{
+    margin-bottom: 30px;
+    font-size: 150%;
+}
+@media (max-width: 768px) {
+    .bundar img,
+    .bundar-2 img {
+        width: 100%;
+        height: auto;
+    }
+    .status{
+        width:100%;
+        padding:10px;
+        
+    }
+    .kiri2, .kanan2{
+        padding:20px 10px;
+        height:250px;
+
+    }
+    
+    .bundar-2 {
+        width: 100px;
+        height: 100px;
+    }
+    #isikanankiri h3, #isikanankiri h2{
+        font-size: 100%;
+    }
+    #isikanankiri label{
+        font-size: 80%;
+    }
+    #isikanankiri input{
+        width:70px;
+    }
+    #diskah{
+        font-size: 2rem;
+    }
+    #diskap{
+        font-size: 1rem;
+    }
+    #mobilepembayaran{
+        margin-bottom: 10px;
+        font-size: 100%;
+    }
+}
+
+
